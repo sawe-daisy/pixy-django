@@ -1,4 +1,22 @@
 {%extends 'base.html'%}
 {% block content %}
 {{block.super}}
+<div class="contaier">
+    <div>
+          <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#product">Animals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#pickupline">Travel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#interview">Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#promotion">Random</a>
+            </li>
+          </ul>
+    </div>
+</div>
 {% endblock %}
