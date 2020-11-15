@@ -25,7 +25,22 @@ class Image(models.Model):
     def __str__(self):
         return self.name
 
+    def save_image(self):
+        self.save()
 
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        pic=cls.objects.get(id=id)
+        return pic
+
+    @classmethod
+    def search_image(cls,category):
+        pics= cls.objects.filter(category__category__icontains=category)
+        return pics
+        
 
 
 

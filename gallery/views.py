@@ -12,7 +12,7 @@ def index(request):
 def search_category(request):
     if 'images' in request.GET and request.GET['images']:
         cateGory=request.GET.get('images')
-        imagesFound=Image.searchImage(cateGory)
+        imagesFound=Image.search_image(cateGory)
         message=f"{cateGory}"
         
         return render(request, "search.html", {"message": message,"imagesFound": imagesFound})
@@ -30,7 +30,7 @@ def search_category(request):
 #         return render(request, '')
 
 def viewImage(request, ):
-    image=Image.get_image(id)
+    image=Image.get_image_by_id(id)
     if image:
         return render(request, "pics.html", {"image": image})
     else:
