@@ -6,3 +6,5 @@ from .models import Image
 # Create your views here.
 def index(request):
     images= Image.objects.all().order_by('-id')
+    title = 'Pix Bay'
+    return render(request, 'index.html', {"title": title, "images": images})
