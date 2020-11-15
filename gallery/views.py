@@ -29,7 +29,7 @@ def search_category(request):
 
 #         return render(request, '')
 
-def viewImages(request, ):
+def viewImage(request, ):
     image=Image.get_image(id)
     if image:
         return render(request, "pics.html", {"image": image})

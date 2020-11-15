@@ -5,7 +5,9 @@ from . import views
 from django.urls import path, re_path
 
 urlpatterns=[
-    # path('search/', views.searchResults, name='searchResults'),
+    path('', views.index, name='Images'),
+    path('search/', views.search_category, name='searchResults'),
+    path('image/', views.viewImage, name='viewImage')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
