@@ -10,9 +10,15 @@ class Test_image(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image, Image))
+
+    def test_save_method(self):
+        self.image.save_image()
+        images= Image.objects.all()
+        self.assertTrue(len(images) > 0)
     
     def tearDown(self):
         Image.objects.all().delete()
+
 
 class Location_Test(TestCase):
 
@@ -28,10 +34,10 @@ class Location_Test(TestCase):
 class Category_Test(TestCase):
     
     def setUP(self):
-        self.location=Location(location='location')
+        self.category=Category(category='category')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.location, Location))
+        self.assertTrue(isinstance(self.category, Category))
     
     def tearDown(self):
-        Location.objects.all.delete()
+        Category.objects.all.delete()
