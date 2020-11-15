@@ -6,8 +6,13 @@ from .models import Image
 # Create your views here.
 def index(request):
     images= Image.objects.all().order_by('-id')
+    animals=Image.filter_by_category('Pets')
+    travel=Image.filter_by_category('Travel')
+    food=Image.filter_by_category('Food')
+    random=Image.filter_by_category('Random')
     title = 'Pix Bay'
-    return render(request, 'index.html', {"title": title, "images": images})
+    return render(request, 'index.html', {"title": title, "images": images, "animals": animals,
+    "travel": travel, "food": food, "random":random})
 
 def search_category(request):
     if 'images' in request.GET and request.GET['images']:

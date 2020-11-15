@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gallery',
-    'bootstrap4'
+    'bootstrap4',
+    'cloudinary',
 
 ]
 
@@ -129,3 +133,9 @@ STATICFILES_DIRS=[
 ]
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+
+cloudinary.config( 
+  cloud_name = "sawedee", 
+  api_key = "616212518566398", 
+  api_secret = "9vv5at5ybHBCEkz0HAcprG3WwAI" 
+)
