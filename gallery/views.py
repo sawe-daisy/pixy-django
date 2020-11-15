@@ -8,3 +8,30 @@ def index(request):
     images= Image.objects.all().order_by('-id')
     title = 'Pix Bay'
     return render(request, 'index.html', {"title": title, "images": images})
+
+def search_category(request):
+    if 'images' in request.GET and request.GET['images']:
+        cateGory=request.GET.get('images')
+        imagesFound=Image.searchImage(cateGory)
+        message=f"{cateGory}"
+        
+        return render(request, "search.html", {"message": message,"imagesFound": imagesFound})
+
+    else:
+        message ="Item searched is unavailable "
+        return render(request, 'search.html', {"message": message})
+
+# def search_location(request):
+#     if 'location' in request.GET and request.GET['location']:
+#         locationTerm=request.GET.get('location')
+#         imagesFound=Image.filter_by_location(locationTerm)
+#         message = f"{locationTerm}"
+
+#         return render(request, '')
+
+def viewImages(request, ):
+    image=Image.get_image(id)
+    if image:
+        return render(request, "pics.html", {"image": image})
+    else:
+        return redirect(index)
