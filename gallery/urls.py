@@ -7,3 +7,5 @@ from django.urls import path, re_path
 urlpatterns=[
     # path('search/', views.searchResults, name='searchResults'),
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
