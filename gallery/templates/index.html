@@ -6,7 +6,7 @@
 <div class='container-fluid'>
     <div class="row" style="justify-content: center; display: flex; flex-direction: row; flex-wrap: wrap;">
         {% for photos in images %}
-        <div class="col-md-3">
+        <div class="col-md-3" style="margin: 20px;">
 
 
             <div class="panel panel-default">
@@ -35,7 +35,7 @@
 
                         <div class="modal-body">
 
-                            <img src="{{photos.image.url}}" class="img-responsive" alt="cant show" height="300px"
+                            <img src="{{photos.image.url}}" class="img-responsive" alt="cant show" height="250px"
                                 style=" box-shadow: 0 4px 8px 0 rgba(11, 10, 14, 0.87)">
                         </div>
 
