@@ -12,7 +12,7 @@
             <div class="panel panel-default">
                 <div class="panel-body" style=" box-shadow: 0 4px 8px 0 rgba(11, 10, 14, 0.87)">
                     <a href="" data-toggle="modal" data-target="#staticBackdrop{{photos.id}}">
-                        <img src="{{photos.image.url}}" class="img-responsive styled" alt="cant show"></a>
+                        <img src="{{photos.image.url}}" class="img-responsive styled" alt="cant show" height="300px"></a>
                 </div>
                 <div class="panel-footer text-center" style="font-family: 'Patrick Hand', cursive;">
                     <b>{{photos.name}}</b></div>
@@ -35,7 +35,7 @@
 
                         <div class="modal-body">
 
-                            <img src="{{photos.image.url}}" class="img-responsive" alt="cant show" height="300px"
+                            <img src="{{photos.image.url}}" class="img-responsive" alt="cant show"
                                 style=" box-shadow: 0 4px 8px 0 rgba(11, 10, 14, 0.87)">
                         </div>
 
@@ -52,7 +52,7 @@
 
                         <div class="modal-footer row">
                             <div class="col-md-8">
-                                <input type="text" value="https://pixinsta.herokuapp.com/media/{{photos.image}}"
+                                <input type="text" value="https://pixinsta.herokuapp.com/media/{{photos.image.url}}"
                                     id="myInput">
                                 <button class="btn btn-info" onclick="myFunction()">Copy Link</button>
                             </div>
